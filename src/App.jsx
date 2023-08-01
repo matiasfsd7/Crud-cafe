@@ -28,7 +28,7 @@ function App() {
         ></Route>
         <Route
           exact
-          patch="/administrador"
+          path="/administrador"
           element={<Administrador></Administrador>}
         ></Route>
         <Route
@@ -41,7 +41,7 @@ function App() {
           path="/administrador/editar"
           element={<EditarProducto></EditarProducto>}
         ></Route>
-        <Route exact patch="*" element={<Error404></Error404>}></Route>
+        <Route exact path="*" element={<Error404></Error404>}></Route>
       </Routes>
       <Footer></Footer>
     </BrowserRouter>
