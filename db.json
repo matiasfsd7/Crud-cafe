@@ -1,0 +1,12 @@
+{
+  "productos": [
+    {
+      "nombreProducto": "cafeBonaffide",
+      "precio": 1000,
+      "categoria": "bebida caliente",
+      "imagen": "https://images.pexels.com/photos/5225292/pexels-photo-5225292.jpeg",
+      "descripcion": "Buen Cafe",
+      "id": 1
+    }
+  ]
+}
