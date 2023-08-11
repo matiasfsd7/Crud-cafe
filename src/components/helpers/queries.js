@@ -1,4 +1,4 @@
-const login = async (usuario) => {
+export const login = async (usuario) => {
   try {
     //pedir la lista de usuarios a json-server.
 
@@ -19,7 +19,7 @@ const login = async (usuario) => {
         return "usuario u/o contraseña incorrecto";
       }
     } else {
-      console.log("el mail es incorrecto");
+      console.log("el email es incorrecto");
       return null;
     }
     //sino tendria que salir que es incorrecto.

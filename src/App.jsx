@@ -11,8 +11,12 @@ import Administrador from "./components/views/Administrador";
 import Login from "./components/views/Login";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Registro from "./components/views/Registro";
+import { useState } from "react";
 
 function App() {
+  const usuarioEnLinea =
+    JSON.parse(sessionStorage.getItem("usuarioLogueado")) || {};
+  const [usuarioActivo, setUsuarioActivo] = useState(usuarioEnLinea);
   return (
     <BrowserRouter>
       <Menu></Menu>
