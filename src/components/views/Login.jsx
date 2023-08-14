@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { login } from "../helpers/queries";
 import Swal from "sweetalert2";
 
-const Login = () => {
+const Login = ({ propsUsuarioActivo }) => {
   const {
     register,
     handleSubmit,
@@ -21,6 +21,9 @@ const Login = () => {
           "Ingresaste Correctamente!",
           "success"
         );
+
+        sessionStorage.setItem("usuarioLogueado", JSON.stringify(respuesta));
+        propsUsuarioActivo(respuesta);
       } else {
         Swal.fire(
           "Ocurrio un Error!",
