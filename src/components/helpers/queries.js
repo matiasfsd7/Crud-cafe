@@ -38,7 +38,7 @@ export const login = async (usuario) => {
 // peticion PATCH, modificar algun valor de un elemento
 // peticion DELETE, eliminar un elemento
 
-const listarProductos = async () => {
+export const listarProductos = async () => {
   try {
     const respuesta = fetch(urlProducto);
     const listaDosProductos = await respuesta.json();

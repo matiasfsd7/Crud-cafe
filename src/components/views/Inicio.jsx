@@ -1,11 +1,26 @@
 import { Container, Row } from "react-bootstrap";
 import CardProducto from "./producto/CardProducto";
 import { useEffect, useState } from "react";
+import { listarProductos } from "../helpers/queries";
+import Swal from "sweetalert2";
 
 const Inicio = () => {
   const [listaProductos, setListaProductos] = useState([]);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    listarProductos().then((respuestaProductos) => {
+      if (respuestaProductos) {
+        //actualizar el estado
+        setListaProductos(respuestaProductos);
+      } else {
+        Swal.fire(
+          "Ocurrio un Error!",
+          "Algo no salio bien T_T, intente mas tarde",
+          "error"
+        );
+      }
+    });
+  }, []);
 
   return (
     <section className="mainSection">
@@ -18,9 +33,6 @@ const Inicio = () => {
         <h1 className="display-4">Nuestros Productos</h1>
         <hr />
         <Row>
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
           <CardProducto></CardProducto>
         </Row>
       </Container>
